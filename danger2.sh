@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
+
+#
+# all_github_ids should contain all the github usernames.
+# I used postman to query the github api to find out all the outside collaborators ~128 github ids.
+#
+#
+
 cd allrepos
 
 while read p; do
+
+    rootpath=`pwd`
 
     outputString=${p}
     counter=8
@@ -49,7 +58,7 @@ while read p; do
     #write results
     echo ${outputString} >> ../../../result
 
-    cd ../..
+    cd ${rootpath}
 
     echo REACHED END FOR ${p}
 
